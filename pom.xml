@@ -25,7 +25,6 @@
         <spring-boot.version>2.7.3</spring-boot.version>
         <knif4j.version>3.0.3</knif4j.version>
     </properties>
-
     <repositories>
         <repository>
             <id>mavenCentral</id>
