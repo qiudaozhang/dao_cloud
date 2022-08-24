@@ -27,11 +27,6 @@
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_common</artifactId>
-
-        </dependency>
-        <dependency>
-            <groupId>com.qiudaozhang</groupId>
-            <artifactId>dao_db</artifactId>
         </dependency>
 
     </dependencies>

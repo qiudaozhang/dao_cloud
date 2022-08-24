@@ -56,7 +56,6 @@
                 <artifactId>mybatis-plus-generator</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 </project>

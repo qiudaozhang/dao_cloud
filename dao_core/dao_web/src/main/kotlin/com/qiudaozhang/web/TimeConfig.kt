@@ -17,6 +17,10 @@ import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
+/**
+ * @author qiudaozhang
+ * @since 2022-8-24
+ */
 @Configuration
 open class TimeConfig {
 

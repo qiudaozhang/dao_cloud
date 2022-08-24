@@ -3,6 +3,7 @@ package com.qiudaozhang.controller;
 import com.qiudaozhang.core.common.consts.StringPool
 import com.qiudaozhang.entity.Account
 import com.qiudaozhang.service.IAccountService
+import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
 import org.springframework.web.bind.annotation.*
 import javax.annotation.Resource
@@ -17,6 +18,7 @@ import javax.annotation.Resource
  */
 @RestController
 @RequestMapping("/api/account")
+@Api(tags = ["账户"])
 class AccountController {
     // 代码要放类里面，不然不会生效的
     @Resource

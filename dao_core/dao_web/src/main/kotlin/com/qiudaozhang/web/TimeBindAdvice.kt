@@ -13,6 +13,8 @@ import java.time.format.DateTimeFormatter
 
 /**
  * 普通web请求参数关于日志的绑定处理
+ * @author qiudaozhang
+ * @since 2022-8-24
  */
 @RestControllerAdvice
 class TimeBindAdvice {

@@ -11,6 +11,7 @@
 
     <artifactId>account_api</artifactId>
 
+    <description>账户服务公开的接口模块</description>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>

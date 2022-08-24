@@ -9,6 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+
+    <description>账户服务的具体实现</description>
     <artifactId>account</artifactId>
 
     <properties>
