@@ -2,10 +2,12 @@ package com.qiudaozhang.controller;
 
 import com.qiudaozhang.core.common.consts.StringPool
 import com.qiudaozhang.entity.Account
+import com.qiudaozhang.request.AccountSearch
 import com.qiudaozhang.service.IAccountService
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
 import org.springframework.web.bind.annotation.*
+import java.time.LocalDateTime
 import javax.annotation.Resource
 
 /**
@@ -35,7 +37,10 @@ class AccountController {
     @PutMapping
     @ApiOperation(StringPool.UPDATE)
     fun update(account: Account) {
-        accountService.save(account)
+        val one = accountService.getById(account.id)
+        one.updated = LocalDateTime.now()
+        one.username = account.username
+        accountService.updateById(one)
     }
 
     @GetMapping("{id}")
@@ -55,11 +60,15 @@ class AccountController {
     @ApiOperation(StringPool.GET_ALL)
     fun getAll(): List<Account> {
         val data = accountService.list()
-        // 隐藏deleted 属性 ， 增强器处理后 ，这里无需处理
-//        data.forEach { a -> a.deleted = null }
         return data
     }
 
+
+    @GetMapping("do/search")
+    @ApiOperation(StringPool.SEARCH)
+    fun search(accountSearch: AccountSearch): List<Account> {
+        return accountService.ktQuery().like(Account::username, accountSearch.username).list()
+    }
 }
 
 

@@ -47,11 +47,11 @@ class ResponseAdvice : ResponseBodyAdvice<Any> {
 
         if (body is List<*>) {
             var hasSwaggerResource = false
-            body.forEach { c ->
-                run {
-                    if (c is SwaggerResource) {
-                        hasSwaggerResource = true
-                    }
+            for (c in body) {
+                if (c is SwaggerResource) {
+                    // 满足一个就退出，提高速度
+                    hasSwaggerResource = true
+                    break
                 }
             }
             if (hasSwaggerResource) {
@@ -75,7 +75,6 @@ class ResponseAdvice : ResponseBodyAdvice<Any> {
             }
         }
         // 其他类型也可以参照这个的方式进行处理
-
         return R.suc(body);
     }
 
