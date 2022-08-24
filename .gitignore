@@ -1,0 +1,10 @@
+# Project exclude paths
+/dao_core/dao_common/target/
+/dao_core/dao_db/target/
+/dao_core/dao_web/target/
+/dao_system/account/target/
+/dao_system/account_api/target/
+
+/**/target
+/***/*.iml
+/**/.idea
