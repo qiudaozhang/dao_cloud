@@ -8,6 +8,7 @@
     <modules>
         <module>dao_core</module>
         <module>dao_system</module>
+        <module>gateway</module>
     </modules>
     <groupId>com.qiudaozhang</groupId>
     <version>0.0.1</version>
@@ -24,6 +25,9 @@
         <project.version>0.0.1</project.version>
         <spring-boot.version>2.7.3</spring-boot.version>
         <knif4j.version>3.0.3</knif4j.version>
+        <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+        <log4j2>2.17.0</log4j2>
     </properties>
     <repositories>
         <repository>
@@ -77,6 +81,24 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--            spring cloud 依赖-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring cloud alibaba 依赖 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>

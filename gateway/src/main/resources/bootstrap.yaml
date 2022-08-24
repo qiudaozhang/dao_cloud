@@ -1,0 +1,11 @@
+server:
+  port: 16000
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        group: dao
+        namespace: 2b3c48fb-f6e6-4ff4-9c74-6b9be8fb5b09
