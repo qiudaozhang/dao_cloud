@@ -1,6 +1,7 @@
 package com.qiudaozhang.config
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j
+import com.qiudaozhang.core.common.consts.ProjectConst
 import com.qiudaozhang.web.BaseSwagger
 import com.qiudaozhang.web.model.SwaggerProperties
 import org.springframework.beans.factory.config.BeanPostProcessor
@@ -18,8 +19,8 @@ open class SwaggerConfig : BaseSwagger() {
         p.apiBasePackage = "com.qiudaozhang.controller"
         p.title = "账号服务"
         p.description = "账户服务接口文档"
-        p.contactName = "邱道长"
-        p.version = "0.0.1"
+        p.contactName = ProjectConst.MAINTAINER
+        p.version = ProjectConst.VERSION
         return p
     }
 

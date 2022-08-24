@@ -7,7 +7,7 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer
-import com.qiudaozhang.core.common.consts.TimePool
+import com.qiudaozhang.core.common.consts.TimeConst
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -38,14 +38,14 @@ open class TimeConfig {
         val serializers: MutableMap<Class<*>, JsonSerializer<*>> = HashMap()
 
         serializers[LocalDateTime::class.java] =
-            LocalDateTimeSerializer(DateTimeFormatter.ofPattern(TimePool.YMD_HMS))
-        serializers[LocalDate::class.java] = LocalDateSerializer(DateTimeFormatter.ofPattern(TimePool.YMD))
-        serializers[LocalTime::class.java] = LocalTimeSerializer(DateTimeFormatter.ofPattern(TimePool.HMS))
+            LocalDateTimeSerializer(DateTimeFormatter.ofPattern(TimeConst.YMD_HMS))
+        serializers[LocalDate::class.java] = LocalDateSerializer(DateTimeFormatter.ofPattern(TimeConst.YMD))
+        serializers[LocalTime::class.java] = LocalTimeSerializer(DateTimeFormatter.ofPattern(TimeConst.HMS))
 
         val deserializers = hashMapOf<Class<*>, JsonDeserializer<*>>(
-            LocalDateTime::class.java to LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(TimePool.YMD_HMS)),
-            LocalDate::class.java to LocalDateDeserializer(DateTimeFormatter.ofPattern(TimePool.YMD)),
-            LocalDateTime::class.java to LocalTimeDeserializer(DateTimeFormatter.ofPattern(TimePool.HMS))
+            LocalDateTime::class.java to LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(TimeConst.YMD_HMS)),
+            LocalDate::class.java to LocalDateDeserializer(DateTimeFormatter.ofPattern(TimeConst.YMD)),
+            LocalDateTime::class.java to LocalTimeDeserializer(DateTimeFormatter.ofPattern(TimeConst.HMS))
         )
         return Jackson2ObjectMapperBuilderCustomizer { builder: Jackson2ObjectMapperBuilder ->
             builder.serializersByType(serializers).deserializersByType(deserializers).configure(mapper)

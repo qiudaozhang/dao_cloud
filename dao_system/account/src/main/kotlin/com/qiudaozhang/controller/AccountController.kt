@@ -1,6 +1,6 @@
 package com.qiudaozhang.controller;
 
-import com.qiudaozhang.core.common.consts.StringPool
+import com.qiudaozhang.core.common.consts.StringConst
 import com.qiudaozhang.entity.Account
 import com.qiudaozhang.request.AccountSearch
 import com.qiudaozhang.service.IAccountService
@@ -28,14 +28,14 @@ class AccountController {
 
 
     @PostMapping
-    @ApiOperation(StringPool.CREATE)
+    @ApiOperation(StringConst.CREATE)
     fun create(account: Account) {
         accountService.save(account)
     }
 
 
     @PutMapping
-    @ApiOperation(StringPool.UPDATE)
+    @ApiOperation(StringConst.UPDATE)
     fun update(account: Account) {
         val one = accountService.getById(account.id)
         one.updated = LocalDateTime.now()
@@ -44,20 +44,20 @@ class AccountController {
     }
 
     @GetMapping("{id}")
-    @ApiOperation(StringPool.GET)
-    fun get(@PathVariable("id") id: Long): Account {
+    @ApiOperation(StringConst.GET)
+    fun get(@PathVariable("id") id: Long): Account? {
         return accountService.getById(id)
     }
 
     @DeleteMapping("{id}")
-    @ApiOperation(StringPool.DELETE)
+    @ApiOperation(StringConst.DELETE)
     fun delete(@PathVariable("id") id: Long) {
         accountService.removeById(id)
     }
 
 
     @GetMapping("do/getAll")
-    @ApiOperation(StringPool.GET_ALL)
+    @ApiOperation(StringConst.GET_ALL)
     fun getAll(): List<Account> {
         val data = accountService.list()
         return data
@@ -65,7 +65,7 @@ class AccountController {
 
 
     @GetMapping("do/search")
-    @ApiOperation(StringPool.SEARCH)
+    @ApiOperation(StringConst.SEARCH)
     fun search(accountSearch: AccountSearch): List<Account> {
         return accountService.ktQuery().like(Account::username, accountSearch.username).list()
     }

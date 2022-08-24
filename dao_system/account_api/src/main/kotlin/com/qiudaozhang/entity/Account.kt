@@ -1,6 +1,6 @@
 package com.qiudaozhang.entity
 
-import com.qiudaozhang.core.common.consts.StringPool
+import com.qiudaozhang.core.common.consts.StringConst
 import com.qiudoazhang.db.BaseEntity
 import io.swagger.annotations.ApiModel
 import io.swagger.annotations.ApiModelProperty
@@ -18,10 +18,10 @@ import java.io.Serializable
 class Account : BaseEntity(), Serializable {
 
     @ApiModelProperty("用户名")
-    var username: String = StringPool.EMPTY
+    var username: String = StringConst.EMPTY
 
     @ApiModelProperty("密码")
-    var password: String = StringPool.EMPTY
+    var password: String = StringConst.EMPTY
 
     override fun toString(): String {
         return "Account{" +

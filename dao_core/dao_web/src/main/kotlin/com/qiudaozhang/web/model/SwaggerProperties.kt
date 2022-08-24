@@ -1,6 +1,6 @@
 package com.qiudaozhang.web.model
 
-import com.qiudaozhang.core.common.consts.StringPool
+import com.qiudaozhang.core.common.consts.StringConst
 
 class SwaggerProperties {
     /**
@@ -16,30 +16,30 @@ class SwaggerProperties {
     /**
      * 文档标题
      */
-    var title: String = StringPool.EMPTY
+    var title: String = StringConst.EMPTY
 
     /**
      * 文档描述
      */
-    var description: String = StringPool.EMPTY
+    var description: String = StringConst.EMPTY
 
     /**
      * 文档版本
      */
-    var version: String = StringPool.EMPTY
+    var version: String = StringConst.EMPTY
 
     /**
      * 文档联系人姓名
      */
-    var contactName: String = StringPool.EMPTY
+    var contactName: String = StringConst.EMPTY
 
     /**
      * 文档联系人网址
      */
-    var contactUrl: String = StringPool.EMPTY
+    var contactUrl: String = StringConst.EMPTY
 
     /**
      * 文档联系人邮箱
      */
-    var contactEmail: String = StringPool.EMPTY
+    var contactEmail: String = StringConst.EMPTY
 }

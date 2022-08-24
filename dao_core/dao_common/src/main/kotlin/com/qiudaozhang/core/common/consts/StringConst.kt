@@ -3,7 +3,7 @@ package com.qiudaozhang.core.common.consts
 /**
  * 字符串常量
  */
-object StringPool {
+object StringConst {
 
     const val EMPTY = ""
 

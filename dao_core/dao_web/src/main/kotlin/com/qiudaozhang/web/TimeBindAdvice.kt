@@ -1,6 +1,6 @@
 package com.qiudaozhang.web
 
-import com.qiudaozhang.core.common.consts.TimePool
+import com.qiudaozhang.core.common.consts.TimeConst
 import org.springframework.web.bind.WebDataBinder
 import org.springframework.web.bind.annotation.InitBinder
 import org.springframework.web.bind.annotation.RestControllerAdvice
@@ -25,17 +25,17 @@ class TimeBindAdvice {
 
         binder.registerCustomEditor(LocalDateTime::class.java, object : PropertyEditorSupport() {
             override fun setAsText(text: String?) {
-                value = LocalDateTime.parse(text, DateTimeFormatter.ofPattern(TimePool.YMD_HMS))
+                value = LocalDateTime.parse(text, DateTimeFormatter.ofPattern(TimeConst.YMD_HMS))
             }
         })
         binder.registerCustomEditor(LocalDate::class.java, object : PropertyEditorSupport() {
             override fun setAsText(text: String?) {
-                value = LocalDate.parse(text, DateTimeFormatter.ofPattern(TimePool.YMD))
+                value = LocalDate.parse(text, DateTimeFormatter.ofPattern(TimeConst.YMD))
             }
         })
         binder.registerCustomEditor(LocalTime::class.java, object : PropertyEditorSupport() {
             override fun setAsText(text: String?) {
-                value = LocalTime.parse(text, DateTimeFormatter.ofPattern(TimePool.HMS))
+                value = LocalTime.parse(text, DateTimeFormatter.ofPattern(TimeConst.HMS))
             }
         })
 
