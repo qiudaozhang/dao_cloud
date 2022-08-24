@@ -9,9 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-
-    <description>账户服务的具体实现</description>
-    <artifactId>account</artifactId>
+    <!--    一般通用性的系统都需要一个后台管理系统， 可以在此基础上记性扩展
+        管理服务的只提供入口，具体的实现由各个具体的微服务提供，相当于只是个路由的入口
+    -->
+    <description>管理服务</description>
+    <artifactId>manager</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,31 +21,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
     <dependencies>
-
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>account_api</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.qiudaozhang</groupId>
-            <artifactId>dao_db</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.qiudaozhang</groupId>
-            <artifactId>dao_web</artifactId>
-        </dependency>
-
     </dependencies>
 </project>

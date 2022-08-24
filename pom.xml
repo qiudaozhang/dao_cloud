@@ -28,6 +28,7 @@
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <log4j2>2.17.0</log4j2>
+        <dubbo-starter.version>3.1.0</dubbo-starter.version>
     </properties>
     <repositories>
         <repository>
@@ -81,7 +82,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--            spring cloud 依赖-->
+            <!-- spring cloud 依赖 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -113,7 +114,11 @@
                 <version>${knif4j.version}</version>
             </dependency>
 
-
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-starter.version}</version>
+            </dependency>
             <!--            内部依赖管理-->
             <dependency>
                 <groupId>com.qiudaozhang</groupId>
