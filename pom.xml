@@ -28,7 +28,8 @@
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <log4j2>2.17.0</log4j2>
-        <dubbo-starter.version>3.1.0</dubbo-starter.version>
+        <dubbo-starter.version>3.0.10</dubbo-starter.version>
+        <nacos-client.version>2.1.0</nacos-client.version>
     </properties>
     <repositories>
         <repository>
@@ -119,6 +120,12 @@
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${dubbo-starter.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-dubbo</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+
             <!--            内部依赖管理-->
             <dependency>
                 <groupId>com.qiudaozhang</groupId>
@@ -148,7 +155,11 @@
                 <artifactId>account_api</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
+            </dependency>
 
             <!--            <dependency>-->
             <!--                <groupId>org.springframework.boot</groupId>-->
