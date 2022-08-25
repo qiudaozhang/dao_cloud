@@ -17,6 +17,10 @@ import java.io.Serializable
 @ApiModel(value = "Account对象", description = "")
 class Account : BaseEntity(), Serializable {
 
+    companion object {
+        private val serialVersionUid: Long = 1
+    }
+
     @ApiModelProperty("用户名")
     var username: String = StringConst.EMPTY
 

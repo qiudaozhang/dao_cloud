@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacosUrl}:8848 #服务注册地址,外网地址
+        namespace: 2b3c48fb-f6e6-4ff4-9c74-6b9be8fb5b09
+        #开发空间
+        group: dao #组名
+        username: ${nacosUsername}
+        password: ${nacosPassword}
+      config: #配置中心的设置，需要配置在bootstrap里，不要在application文件配置
+        server-addr: ${nacosUrl}:8848 #配置中心地址,外网地址
+        namespace: 2b3c48fb-f6e6-4ff4-9c74-6b9be8fb5b09
+        #开发空间
+        file-extension: yaml
+        group: dao #组名
+        username: ${nacosUsername}
+        password: ${nacosPassword}
+  redis:
+    database: 3
+sa-token:
+  check-id-token: true
+  token-name: Authorization
+  is-read-cookie: false
+  token-prefix: Bearer
+  jwt-secret-key: luhongkj207983
+

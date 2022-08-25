@@ -1,5 +1,7 @@
 package com.qiudaozhang.manager.controller;
 
+import cn.dev33.satoken.stp.SaTokenInfo
+import cn.dev33.satoken.stp.StpUtil
 import com.qiudaozhang.core.common.consts.StringConst
 import com.qiudaozhang.entity.Account
 import com.qiudaozhang.mic.AccountMic
@@ -41,8 +43,11 @@ class AccountController {
 
     @PostMapping("do/login")
     @ApiOperation("登录")
-    fun login(account: Account) {
+    fun login(account: Account): SaTokenInfo {
         val s: String = accountMic.login(account)
+        StpUtil.login(s)
+//        return StpUtil.getTokenValue()
+        return StpUtil.getTokenInfo()
     }
 //
 //
