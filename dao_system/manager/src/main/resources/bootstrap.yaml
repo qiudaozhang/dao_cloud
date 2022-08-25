@@ -1,14 +1,32 @@
-server:
-  port: 16300
-
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  profiles:
+    active: dev
   application:
     name: manager
-  cloud:
-    nacos:
-      discovery:
-        group: dao
-        namespace: 2b3c48fb-f6e6-4ff4-9c74-6b9be8fb5b09
-      config:
-        group: dao
-        namespace: 2b3c48fb-f6e6-4ff4-9c74-6b9be8fb5b09
+  main:
+    #    循环引用，暂时开启，后面改掉
+    allow-circular-references: true
+
+server:
+  port: 16300
+  servlet:
+    context-path: /manager
+
+logging:
+  level:
+    com.alibaba.nacos.client.*: WARN
+  config: classpath:log4j2.xml # 日志配置文件
+  file:
+    name: /var/log/dao_cloud/manager/all.log
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl

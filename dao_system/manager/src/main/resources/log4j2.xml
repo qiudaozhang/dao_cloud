@@ -2,7 +2,7 @@
 <configuration status="ERROR" monitorInterval="120">
     <!-- 配置log主目录 -->
     <properties>
-        <property name="LOG_HOME">/var/log/dao_cloud/manager</property>
+        <property name="LOG_HOME">/var/log/dao_cloud/account</property>
     </properties>
     <!--先定义所有的appender-->
     <appenders>
