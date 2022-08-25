@@ -24,4 +24,4 @@ sa-token:
   token-name: Authorization
   is-read-cookie: false
   token-prefix: Bearer
-  jwt-secret-key: luhongkj207983
+  jwt-secret-key: zwNPgs3E4xBaVvVe
