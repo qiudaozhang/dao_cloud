@@ -7,5 +7,5 @@ interface AccountMic {
     fun getAll(): List<Account>
 
     fun create(account: Account)
-    fun login(account: Account): String
+    fun login(account: Account): Account
 }

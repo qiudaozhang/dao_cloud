@@ -31,14 +31,12 @@ class AccountMicProvider : AccountMic {
         accountService.save(account)
     }
 
-    override fun login(account: Account): String {
+    override fun login(account: Account): Account {
         val one = accountService.ktQuery().eq(Account::username, account.username).one()
         if (one != null) {
             val dePass = SaSecureUtil.rsaDecryptByPrivate(privateKey, one.password)
             if (account.password == dePass) {
-                return one.id.toString()
-//                StpUtil.login(one.id)
-//                return StpUtil.getTokenInfo().tokenValue
+                return one
             }
         }
         throw RuntimeException("用户名或密码错误")

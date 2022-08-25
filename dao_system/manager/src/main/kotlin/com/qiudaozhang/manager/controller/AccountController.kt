@@ -1,5 +1,7 @@
 package com.qiudaozhang.manager.controller;
 
+import cn.dev33.satoken.jwt.SaJwtUtil
+import cn.dev33.satoken.stp.SaLoginConfig
 import cn.dev33.satoken.stp.SaTokenInfo
 import cn.dev33.satoken.stp.StpUtil
 import com.qiudaozhang.core.common.consts.StringConst
@@ -44,9 +46,9 @@ class AccountController {
     @PostMapping("do/login")
     @ApiOperation("登录")
     fun login(account: Account): SaTokenInfo {
-        val s: String = accountMic.login(account)
-        StpUtil.login(s)
-//        return StpUtil.getTokenValue()
+        val account = accountMic.login(account)
+        val model = SaLoginConfig.setExtra("phone", account.username)
+        StpUtil.login(account.id, model)
         return StpUtil.getTokenInfo()
     }
 //

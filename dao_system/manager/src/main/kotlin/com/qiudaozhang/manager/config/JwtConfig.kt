@@ -1,4 +1,4 @@
-package com.qiudaozhang.config
+package com.qiudaozhang.manager.config
 
 import cn.dev33.satoken.jwt.StpLogicJwtForSimple
 import cn.dev33.satoken.stp.StpLogic
