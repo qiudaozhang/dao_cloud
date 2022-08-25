@@ -16,6 +16,7 @@
         <module>dao_auth</module>
         <module>dao_db</module>
         <module>dao_web</module>
+        <module>dao_micro_pom</module>
     </modules>
 
     <properties>

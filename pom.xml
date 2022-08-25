@@ -155,11 +155,20 @@
                 <artifactId>account_api</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+
+            <dependency>
+                <groupId>com.qiudaozhang</groupId>
+                <artifactId>dao_micro_pom</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-client</artifactId>
                 <version>${nacos-client.version}</version>
             </dependency>
+
 
             <!--            <dependency>-->
             <!--                <groupId>org.springframework.boot</groupId>-->
