@@ -1,0 +1,17 @@
+package com.qiudaozhang
+
+import cn.dev33.satoken.secure.SaSecureUtil
+
+class Test2 {
+}
+
+fun main() {
+//    val pair = SaSecureUtil.rsaGenerateKeyPair()
+//    print(pair)
+    val privateKey = "MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALDdS+Ol4fqhqJ5TUlvWnYdt1Mvsua1G88I1iQOOZRE2zURaleluxMzl/SgvcKYJxMtw7K4m14b+5GA1dtVT044QSoPuLYdhwYBIG70hYQdxnrOurXcwTNtDsa+vcCGbdoDAr94kFa/Oq59BiRDNbaeeA8kOSIs249ztrWPbLvRhAgMBAAECgYA5A+3+AjDaQhkAiS3Iq2P3D6IE51hoErJsDiQQQGw2Y2tCuM0RBoNs5kt5E+oFrKqDRvEVpzHds/fdR/76AF73Jsz5pAhmfoGVTbjAnACy83cj4Q6jzknrQo6p6a+kiNzBX7Y9ca0t5goiX3Wpw8MkGjxKp31p3PrNvGCmKhHN0QJBAP43EcNKgo5MgLMAXE9+pONDnmamsY9MxBSoMHQbJw1JXgUblCNKmDWzRA06W0Hh52othhvv5nLMEluQqwLYFg0CQQCyGzIUX18KJzI3baAvA2rB5revjKstjRFG4nlTklydHQE8MiNNQeTx7A1kglyvPoqqBfffBL1oWHbWtxB3yjalAkEAhVTSzy/UO9gqJDhLMjKFPuFnQgWp2TP1H7R6/VqEZ/aUBm/JiZ0FKh0k0x9JX8uhOVI5JYv0vT8FXdsJpos5PQJBAKPq26BcVf/mKxVQU4hxQKPMT2nFsRVvK2Nts/PyVEJVG3nnOw4zgx4T/g9u2xZ+HOh2LbaXiiqqoFTkjsdw1/ECQQCObNJMPhztQ8Q3T97UaR7/99L3g9y5pXVMkCHKCxEeDg9gszFhggmXkvkvi5+C4wbTUBuqrg4yMT1FYcjltL6U"
+    val publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCw3UvjpeH6oaieU1Jb1p2HbdTL7LmtRvPCNYkDjmURNs1EWpXpbsTM5f0oL3CmCcTLcOyuJteG/uRgNXbVU9OOEEqD7i2HYcGASBu9IWEHcZ6zrq13MEzbQ7Gvr3Ahm3aAwK/eJBWvzqufQYkQzW2nngPJDkiLNuPc7a1j2y70YQIDAQAB"
+    val encrypt = SaSecureUtil.rsaEncryptByPublic(publicKey,"123")
+    println(encrypt)
+    val decrypt = SaSecureUtil.rsaDecryptByPrivate(privateKey,encrypt)
+    println(decrypt)
+}

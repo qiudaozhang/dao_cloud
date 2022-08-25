@@ -23,7 +23,7 @@
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
         <project.version>0.0.1</project.version>
-        <spring-boot.version>2.7.3</spring-boot.version>
+        <spring-boot.version>2.7.0</spring-boot.version>
         <knif4j.version>3.0.3</knif4j.version>
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
@@ -121,6 +121,11 @@
                 <version>${dubbo-starter.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo-starter.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-dubbo</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
@@ -153,6 +158,11 @@
             <dependency>
                 <groupId>com.qiudaozhang</groupId>
                 <artifactId>account_api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qiudaozhang</groupId>
+                <artifactId>dao_auth</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

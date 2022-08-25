@@ -24,8 +24,13 @@
 
     <dependencies>
 
-        <!--        微服务基础模块 依赖-->
+        <!-- Sa-Token 整合 Dubbo -->
 
+        <dependency>
+            <groupId>com.qiudaozhang</groupId>
+            <artifactId>dao_auth</artifactId>
+        </dependency>
+        <!--        微服务-->
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_micro_pom</artifactId>

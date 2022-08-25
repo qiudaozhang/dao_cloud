@@ -7,6 +7,7 @@ import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
 import org.apache.dubbo.config.annotation.DubboReference
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -31,12 +32,18 @@ class AccountController {
     @DubboReference
     lateinit var accountMic: AccountMic
 
-//
-//    @PostMapping
-//    @ApiOperation(StringConst.CREATE)
-//    fun create(account: Account) {
-//        accountService.save(account)
-//    }
+    //
+    @PostMapping
+    @ApiOperation(StringConst.CREATE)
+    fun create(account: Account) {
+        accountMic.create(account)
+    }
+
+    @PostMapping("do/login")
+    @ApiOperation("登录")
+    fun login(account: Account) {
+        val s: String = accountMic.login(account)
+    }
 //
 //
 //    @PutMapping

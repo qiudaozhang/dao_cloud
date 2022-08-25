@@ -20,7 +20,10 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.qiudaozhang</groupId>
+            <artifactId>dao_auth</artifactId>
+        </dependency>
 
         <!--        微服务基础模块 依赖-->
 
@@ -28,7 +31,6 @@
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_micro_pom</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>account_api</artifactId>
@@ -37,7 +39,6 @@
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_db</artifactId>
