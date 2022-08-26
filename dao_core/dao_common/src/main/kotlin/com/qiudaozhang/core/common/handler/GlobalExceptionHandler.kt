@@ -30,7 +30,7 @@ class GlobalExceptionHandler: ResponseEntityExceptionHandler() {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler
     fun commonException(e: Exception): R<*> {
-        return R.fail<String>(9999, "其它异常，请联系开发人员")
+        return R.fail<String>(9999, "公共异常")
     }
 
 

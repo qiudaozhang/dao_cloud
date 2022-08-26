@@ -19,15 +19,16 @@
     <name>dao_cloud</name>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.code.style>official</kotlin.code.style>
-        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
         <project.version>0.0.1</project.version>
-        <spring-boot.version>2.7.0</spring-boot.version>
+        <kotlin.code.style>official</kotlin.code.style>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
+        <!--        一下是具体的依赖版本定义-->
+        <spring-boot.version>2.7.3</spring-boot.version>
         <knif4j.version>3.0.3</knif4j.version>
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
-        <log4j2>2.17.0</log4j2>
+        <!--        <log4j2>2.17.0</log4j2>-->
         <dubbo-starter.version>3.1.0</dubbo-starter.version>
         <nacos-client.version>2.1.0</nacos-client.version>
         <sa-token.version>1.30.0</sa-token.version>
@@ -207,15 +208,6 @@
                 <artifactId>nacos-client</artifactId>
                 <version>${nacos-client.version}</version>
             </dependency>
-
-
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework.boot</groupId>-->
-            <!--                <artifactId>spring-boot-starter-web</artifactId>-->
-            <!--                <version>${spring-boot.version}</version>-->
-            <!--&lt;!&ndash;                <scope>import</scope>&ndash;&gt;-->
-            <!--            </dependency>-->
-
         </dependencies>
     </dependencyManagement>
 
