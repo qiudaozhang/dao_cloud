@@ -26,12 +26,10 @@
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_db</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_common</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

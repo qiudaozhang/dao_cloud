@@ -26,7 +26,6 @@
         <hutool-all.version>5.8.5</hutool-all.version>
         <mybatis-plus.version>3.5.2</mybatis-plus.version>
         <mysql.version>8.0.30</mysql.version>
-        <sa-token.version>1.30.0</sa-token.version>
     </properties>
 
 
