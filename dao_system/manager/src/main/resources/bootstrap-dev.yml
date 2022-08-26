@@ -1,6 +1,7 @@
 spring:
   redis:
     database: 3
+    port: 6679
   cloud:
     nacos:
       discovery:
@@ -24,3 +25,4 @@ sa-token:
   alone-redis:
     host: localhost
     database: 5
+    port: 6679

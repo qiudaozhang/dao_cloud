@@ -14,6 +14,7 @@ spring:
         group: dao #组名
   redis:
     database: 3
+    port: 6679
 sa-token:
   check-id-token: true
   token-name: Authorization
@@ -23,3 +24,4 @@ sa-token:
   alone-redis:
     host: localhost
     database: 5
+    port: 6679
