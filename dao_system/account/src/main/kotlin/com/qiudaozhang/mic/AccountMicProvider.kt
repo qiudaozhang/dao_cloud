@@ -40,9 +40,9 @@ class AccountMicProvider : AccountMic {
                 return one
             }
         }
-//        throw BizExp.USERNAME_PASSWORD_WRONG
+        throw BizExp.USERNAME_PASSWORD_WRONG
 //        throw BizExp(1001,"用户或密码错误")
-        throw CustomException("用户名获密码错误")
+//        throw BizExp(1001,"用户名获密码错误")
     }
 
     override fun checkHasUsername(username: String): Boolean {
