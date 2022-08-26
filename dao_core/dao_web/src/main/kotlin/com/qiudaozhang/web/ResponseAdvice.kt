@@ -41,6 +41,10 @@ class ResponseAdvice : ResponseBodyAdvice<Any> {
 
 
         // 文档的内容不能代理，否则看不到ui
+
+        if (body is R<*>) { // 本就是R ，就不用再包装了
+            return body
+        }
         if (body is Json) {
             return body
         }

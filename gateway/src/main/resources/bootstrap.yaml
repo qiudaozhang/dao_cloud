@@ -24,3 +24,6 @@ spring:
         namespace: 2b3c48fb-f6e6-4ff4-9c74-6b9be8fb5b09
   redis:
     database: 3
+dubbo:
+  application:
+    qos-enable: false

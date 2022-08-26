@@ -8,4 +8,6 @@ interface AccountMic {
 
     fun create(account: Account)
     fun login(account: Account): Account
+
+    fun checkHasUsername(username: String): Boolean
 }

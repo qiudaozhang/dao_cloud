@@ -26,3 +26,6 @@ sa-token:
     host: localhost
     database: 5
     port: 6679
+dubbo:
+  application:
+    qos-enable: false

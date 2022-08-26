@@ -1,7 +1,8 @@
 package com.qiudaozhang.mic
 
 import cn.dev33.satoken.secure.SaSecureUtil
-import cn.dev33.satoken.stp.StpUtil
+import com.qiudaozhang.core.common.exceptions.BizExp
+import com.qiudaozhang.core.common.exceptions.CustomException
 import com.qiudaozhang.entity.Account
 import com.qiudaozhang.service.IAccountService
 import org.apache.dubbo.config.annotation.DubboService
@@ -39,6 +40,12 @@ class AccountMicProvider : AccountMic {
                 return one
             }
         }
-        throw RuntimeException("用户名或密码错误")
+//        throw BizExp.USERNAME_PASSWORD_WRONG
+//        throw BizExp(1001,"用户或密码错误")
+        throw CustomException("用户名获密码错误")
+    }
+
+    override fun checkHasUsername(username: String): Boolean {
+        return accountService.ktQuery().eq(Account::username, username).count() > 0
     }
 }
