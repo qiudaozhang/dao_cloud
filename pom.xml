@@ -9,6 +9,7 @@
         <module>dao_core</module>
         <module>dao_system</module>
         <module>gateway</module>
+        <module>dao_trade</module>
     </modules>
     <groupId>com.qiudaozhang</groupId>
     <version>0.0.1</version>
