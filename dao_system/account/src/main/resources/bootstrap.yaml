@@ -24,7 +24,7 @@ logging:
     com.alibaba.nacos.client.*: WARN
   config: classpath:log4j2.xml # 日志配置文件
   file:
-    name: /var/log/dao_cloud/account/all.log
+    name: ～/log/dao_cloud/account/all.log
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
