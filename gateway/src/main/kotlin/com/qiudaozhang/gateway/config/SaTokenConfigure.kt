@@ -19,7 +19,6 @@ open class SaTokenConfigure {
             .addExclude("/admin/api/account/**")
             .setAuth { obj: Any? -> println("---------- sa全局认证") } // 指定[异常处理函数]：每次[认证函数]发生异常时执行此函数
             .setError { e: Throwable ->
-                println("---------- sa全局异常 ")
                 SaResult.error(e.message)
             }
     }

@@ -21,7 +21,6 @@ class GlobalExceptionHandler: ResponseEntityExceptionHandler() {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler
     fun bizExp(e: BizExp): R<*> {
-        println(e::class)
         return R.fail<String>(e.code, e.message!!)
     }
 

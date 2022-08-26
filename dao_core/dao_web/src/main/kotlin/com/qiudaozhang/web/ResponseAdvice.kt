@@ -62,10 +62,7 @@ class ResponseAdvice : ResponseBodyAdvice<Any> {
                 return body
             }
         }
-//        println(body!!::class.java)
-//        println(body)
         if (body is DeletedModel) {
-            // 返回的时候统一隐藏deleted的值 ， 这个只能处理单个值
             body.deleted = null
         }
         if (body is List<*>) {

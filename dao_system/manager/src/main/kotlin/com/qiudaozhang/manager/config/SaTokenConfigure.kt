@@ -23,7 +23,6 @@ open class SaTokenConfigure : WebMvcConfigurer {
             .addExclude("/**/login")
             .setAuth { obj: Any? ->
                 // 校验 Id-Token 身份凭证     —— 以下两句代码可简化为：SaIdUtil.checkCurrentRequestToken();
-                println("获取 ID  token")
                 val token = SaHolder.getRequest().getHeader(SaIdUtil.ID_TOKEN)
                 SaIdUtil.checkToken(token)
             }

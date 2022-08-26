@@ -15,9 +15,6 @@ import reactor.core.publisher.Mono
 @Component
 class ForwardAuthFilter : GlobalFilter {
     override fun filter(exchange: ServerWebExchange?, chain: GatewayFilterChain?): Mono<Void> {
-        println("转发改造...")
-        println(SaIdUtil.ID_TOKEN)
-        println(SaIdUtil.getToken())
         val newRequest: ServerHttpRequest = exchange!!.request.mutate().header(SaIdUtil.ID_TOKEN, SaIdUtil.getToken())
             .build()
         val newExchange = exchange!!.mutate().request(newRequest).build()

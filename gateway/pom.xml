@@ -20,12 +20,6 @@
 
     <dependencies>
 
-        <!-- Sa-Token 整合 Dubbo -->
-        <!--        <dependency>-->
-        <!--            <groupId>cn.dev33</groupId>-->
-        <!--            <artifactId>sa-token-context-dubbo</artifactId>-->
-        <!--            <version>1.30.0</version>-->
-        <!--        </dependency>-->
 
         <!-- Sa-Token 权限认证（Reactor响应式集成）, 在线文档：http://sa-token.dev33.cn/ -->
         <dependency>
