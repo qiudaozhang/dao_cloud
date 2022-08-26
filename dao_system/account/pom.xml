@@ -25,6 +25,12 @@
             <artifactId>dao_auth</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-alone-redis</artifactId>
+            <version>1.30.0</version>
+        </dependency>
+
         <!--        微服务基础模块 依赖-->
 
         <dependency>

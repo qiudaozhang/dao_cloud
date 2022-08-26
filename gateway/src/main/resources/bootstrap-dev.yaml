@@ -24,4 +24,7 @@ sa-token:
   is-read-cookie: false
   token-prefix: Bearer
   jwt-secret-key: zwNPgs3E4xBaVvVe
+  alone-redis:
+    host: localhost
+    database: 5
 

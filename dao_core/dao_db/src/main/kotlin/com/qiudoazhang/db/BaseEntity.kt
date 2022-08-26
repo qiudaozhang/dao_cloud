@@ -4,13 +4,14 @@ import com.baomidou.mybatisplus.annotation.IdType
 import com.baomidou.mybatisplus.annotation.TableId
 import com.qiudaozhang.core.common.model.DeletedModel
 import io.swagger.annotations.ApiModelProperty
+import java.io.Serializable
 import java.time.LocalDateTime
 
 
 /**
  * 基础实体类
  */
-open class BaseEntity : DeletedModel(){
+open class BaseEntity : DeletedModel(), Serializable {
 
     @ApiModelProperty("主键")
     @TableId(value = "id", type = IdType.AUTO)
