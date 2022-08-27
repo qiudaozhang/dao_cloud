@@ -18,9 +18,8 @@ open class SaTokenConfigure : WebMvcConfigurer {
     @Bean
     open fun getSaServletFilter(): SaServletFilter? {
         return SaServletFilter()
-            .addInclude("/**")
+            .addInclude("/content/**") // 注意不要写 /** 这样会覆盖到其它服务的路径，子服务管好自己的子路由即可
             .addExclude("/favicon.ico")
-            .addExclude("/**/login")
             .setAuth { obj: Any? ->
                 // 校验 Id-Token 身份凭证     —— 以下两句代码可简化为：SaIdUtil.checkCurrentRequestToken();
                 val token = SaHolder.getRequest().getHeader(SaIdUtil.ID_TOKEN)

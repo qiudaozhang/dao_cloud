@@ -33,5 +33,5 @@ mybatis-plus:
 dubbo:
   application:
     qos-enable: false
-  provider:
-    filter: daoExceptionFilter,-exception
+#  provider:
+#    filter: daoExceptionFilter,-exception
