@@ -17,7 +17,7 @@ open class SaTokenConfigure {
             .addInclude("/**") // 指定 [放行路由]
             .addExclude("/favicon.ico") // 指定[认证函数]: 每次请求执行
             .addExclude("/admin/api/account/**")
-            .setAuth { obj: Any? -> println("---------- sa全局认证") } // 指定[异常处理函数]：每次[认证函数]发生异常时执行此函数
+            .setAuth { obj: Any? -> {} } // 指定[异常处理函数]：每次[认证函数]发生异常时执行此函数
             .setError { e: Throwable ->
                 SaResult.error(e.message)
             }
