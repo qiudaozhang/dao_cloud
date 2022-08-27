@@ -20,7 +20,10 @@
 
 
     <dependencies>
-
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-alone-redis</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>content_api</artifactId>
@@ -29,5 +32,11 @@
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_micro_pom</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.qiudaozhang</groupId>
+            <artifactId>dao_web</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

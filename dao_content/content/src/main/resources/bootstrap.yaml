@@ -1,0 +1,37 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  profiles:
+    active: dev
+  application:
+    name: content
+  main:
+    #    循环引用，暂时开启，后面改掉
+    allow-circular-references: true
+
+server:
+  port: 16400
+  servlet:
+    context-path: /content
+
+logging:
+  level:
+    com.alibaba.nacos.client.*: WARN
+  config: classpath:log4j2.xml # 日志配置文件
+  file:
+    name: ～/log/dao_cloud/content/all.log
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+dubbo:
+  application:
+    qos-enable: false
+  provider:
+    filter: daoExceptionFilter,-exception

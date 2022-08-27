@@ -18,6 +18,10 @@ spring:
           uri: lb://manager
           predicates:
             - Path=/manager/**
+        - id: content
+          uri: lb://content
+          predicates:
+            - Path=/content/**
     nacos:
       discovery:
         group: dao

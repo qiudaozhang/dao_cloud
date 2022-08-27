@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="ERROR" monitorInterval="120">
+    <!-- 配置log主目录 -->
+    <properties>
+        <property name="LOG_HOME">~/log/dao_cloud/account</property>
+    </properties>
+    <!--先定义所有的appender-->
+    <appenders>
+        <!--开发工具输出日志的格式-->
+        <console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </console>
+        <!--这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <RollingFile name="ALL" fileName="${LOG_HOME}/all.log"
+                     filePattern="${LOG_HOME}/all/%d{yyyyMMdd}-all-%i.log.gz">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <Policies>
+                <!--设置每天打包日志一次-->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <!--设置日志文件满10MB后打包-->
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+            <!-- 滚动策略:根据当前filePattern配置，maxDepth(每两天)删除一次 -->
+            <DefaultRolloverStrategy>
+                <Delete basePath="${LOG_HOME}" maxDepth="2">
+                    <IfFileName glob="all/*-all-*.log.gz"/>
+                    <IfLastModified age="30d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <!--这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <RollingFile name="INFO" fileName="${LOG_HOME}/info.log"
+                     filePattern="${LOG_HOME}/info/%d{yyyyMMdd}-info-%i.log.gz">
+            <!--设置日志级别-->
+            <Filters>
+                <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <Policies>
+                <!--设置每天打包日志一次-->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <!--设置日志文件满20MB后打包-->
+                <SizeBasedTriggeringPolicy size="20MB"/>
+            </Policies>
+            <!-- 滚动策略:根据当前filePattern配置，maxDepth(每两天)删除一次 -->
+            <DefaultRolloverStrategy>
+                <Delete basePath="${LOG_HOME}" maxDepth="2">
+                    <IfFileName glob="info/*-info-*.log.gz"/>
+                    <IfLastModified age="60d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <!--这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <RollingFile name="WARN" fileName="${LOG_HOME}/warn.log"
+                     filePattern="${LOG_HOME}/warn/%d{yyyyMMdd}-warn-%i.log.gz">
+            <!--设置日志级别-->
+            <Filters>
+                <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <Policies>
+                <!--设置每天打包日志一次-->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <!--设置日志文件满10MB后打包-->
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <!-- 滚动策略:根据当前filePattern配置，maxDepth(每两天)删除一次 -->
+            <DefaultRolloverStrategy>
+                <Delete basePath="${LOG_HOME}" maxDepth="2">
+                    <IfFileName glob="warn/*-warn-*.log.gz"/>
+                    <IfLastModified age="60d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <!--这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <RollingFile name="ERROR" fileName="${LOG_HOME}/error.log"
+                     filePattern="${LOG_HOME}/error/%d{yyyyMMdd}-error-%i.log.gz">
+            <!--设置日志级别-->
+            <Filters>
+                <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <Policies>
+                <!--设置每天打包日志一次-->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <!--设置日志文件满20MB后打包-->
+                <SizeBasedTriggeringPolicy size="20MB"/>
+            </Policies>
+            <!-- 滚动策略:根据当前filePattern配置，maxDepth(每两天)删除一次 -->
+            <DefaultRolloverStrategy>
+                <Delete basePath="${LOG_HOME}" maxDepth="2">
+                    <IfFileName glob="error/*-error-*.log.gz"/>
+                    <IfLastModified age="60d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+    </appenders>
+
+    <Loggers>
+        <logger name="org.springframework" level="ERROR"></logger>
+        <logger name="org.apache.http" level="ERROR"></logger>
+        <logger name="io.netty" level="ERROR"></logger>
+        <logger name="com.netflix" level="ERROR"></logger>
+        <logger name="org.apache" level="ERROR"></logger>
+        <root level="INFO">
+            <appender-ref ref="ALL"/>
+            <appender-ref ref="INFO"/>
+            <appender-ref ref="WARN"/>
+            <appender-ref ref="ERROR"/>
+            <appender-ref ref="Console"/>
+        </root>
+    </Loggers>
+</configuration>

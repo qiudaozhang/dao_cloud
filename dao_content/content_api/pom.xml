@@ -19,7 +19,11 @@
     </properties>
 
     <dependencies>
-        
+
+        <dependency>
+            <groupId>com.qiudaozhang</groupId>
+            <artifactId>dao_auth</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.qiudaozhang</groupId>
             <artifactId>dao_db</artifactId>
