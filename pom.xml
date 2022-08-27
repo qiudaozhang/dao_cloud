@@ -10,6 +10,9 @@
         <module>dao_system</module>
         <module>gateway</module>
         <module>dao_trade</module>
+        <module>dao_content</module>
+        <module>dao_content/content_api</module>
+        <module>dao_content/content</module>
     </modules>
     <groupId>com.qiudaozhang</groupId>
     <version>0.0.1</version>
@@ -213,6 +216,15 @@
                 <artifactId>maket_api</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.qiudaozhang</groupId>
+                <artifactId>content_api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+            <!--  other-->
 
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>

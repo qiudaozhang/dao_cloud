@@ -13,9 +13,10 @@ import java.util.*
 class CodeGen {}
 
 fun main() {
-    val url = "jdbc:mysql://localhost:33060/dao_account"
+    val url = "jdbc:mysql://localhost:33060/dao_content"
     val username = "root"
     val password = "root"
+
     FastAutoGenerator.create(url, username, password).globalConfig { builder: GlobalConfig.Builder ->
             builder.author("qiudaozhang") // 设置作者
                 .enableSwagger() // 开启 swagger 模式
@@ -24,11 +25,11 @@ fun main() {
                 .outputDir("D:codegen//") // 指定输出目录
         }.packageConfig { builder: PackageConfig.Builder ->
             builder.parent("com.qiudaozhang") // 设置父包名
-                .moduleName("market") // 设置父包模块名
+                .moduleName("content") // 设置父包模块名
                 .pathInfo(Collections.singletonMap(OutputFile.xml, "D:codegen//")) // 设置mapperXml生成路径
         }.strategyConfig { builder: StrategyConfig.Builder ->
 
-            builder.addInclude("future_kline") // 设置需要生成的表名
+            builder.addInclude("article") // 设置需要生成的表名
                 .addTablePrefix("t_", "c_") // 设置过滤表前缀
         }.templateEngine(FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
         .execute()
